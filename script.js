@@ -90,41 +90,47 @@ const choisirEmoji = (conditions, temperature) => {
 // Exemple : decrireMeteo("pluvieux", 8) → "Temps froid et pluvieux"
 
 const decrireMeteo = (conditions, temperature) => {
-  let descritpionmeteo = ""
+
+  let tempsRessenti = ""
+  let descriptionConditions = ""
+
   if(temperature < 0){
-    descritpionmeteo = "Temps glacial"
+    tempsRessenti = "Temps glacial"
   }
-  if(temperature < 10){
-    descritpionmeteo = "Temps froid"
+  else if(temperature < 10){
+    tempsRessenti = "Temps froid"
   }
-  if(temperature < 20){
-    descritpionmeteo = "Temps frais"
+  else if(temperature < 20){
+    tempsRessenti = "Temps frais"
   }
-  if(temperature < 30){
-    descritpionmeteo = "Temps agréable"
+  else if(temperature < 30){
+    tempsRessenti = "Temps agréable"
   }
-  if(conditions = "enneigé"){
-    descritpionmeteo = `${temperature} et enneigé`
-  }
-  if(conditions = "pluvieux"){
-    descritpionmeteo = `${temperature} et pluvieux`
-  } 
-  if(conditions = "brumeux"){
-    descritpionmeteo = `${temperature} et brumeux`
-  } 
-  if(conditions = "ensoleillé"){
-    descritpionmeteo = `${temperature} et ensoleillé`
-  }
-  if(conditions = "ensoleillé"){
-    descritpionmeteo = `${temperature} et ensoleillé`
-  }  
-  if(conditions = "orageux"){
-    descritpionmeteo = `${temperature} et orageux`
-  } 
   else{
-    descritpionmeteo = "Temps chaud"
+    tempsRessenti = "Temps chaud"
   }
-  return descritpionmeteo
+  if(conditions === "neige"){
+    descriptionConditions = " et enneigé"
+  }
+  if(conditions === "pluvieux"){
+    descriptionConditions = " et pluvieux"
+  } 
+  if(conditions === "brouillard"){
+    descriptionConditions = " et brumeux"
+  } 
+  if(conditions === "ensoleillé"){
+    descriptionConditions = " et ensoleillé"
+  }
+  if(conditions === "nuageux"){
+    descriptionConditions = " et nuageux"
+  }  
+  if(conditions === "orageux"){
+    descriptionConditions = " et orageux"
+  } 
+
+
+  let descritpionMeteo = `${tempsRessenti}${descriptionConditions}`
+  return descritpionMeteo
   // Écris ton code ici
 }
 
