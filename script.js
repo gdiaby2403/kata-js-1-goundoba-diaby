@@ -156,6 +156,27 @@ const decrireMeteo = (conditions, temperature) => {
 //   et température > 20        → ajouter { icone: "🕶️", texte: "Pense à la crème solaire" }
 
 const recommanderTenue = (conditions, temperature) => {
+  
+  
+  let iconeTexteTemp = ""
+  let iconeTexteConditions = ""
+  
+
+
+    if(temperature < 0){
+      iconeTexteTemp = "🧥, Manteau d'hiver indispensable"
+  }
+    else if(temperature < 10){
+      iconeTexteTemp = "🧥, Prends un manteau"
+  }
+  else if(temperature < 20){
+    iconeTexteTemp = "🧣, Une veste suffira"
+  }
+  else if(temperature >= 30){
+    iconeTexteTemp = "👕, Habits légers recommandés"
+  }
+  if (conditions = )
+  
   // Écris ton code ici — retourne un tableau []
 }
 
