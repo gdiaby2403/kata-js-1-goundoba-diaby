@@ -157,26 +157,35 @@ const decrireMeteo = (conditions, temperature) => {
 
 const recommanderTenue = (conditions, temperature) => {
   
-  
   let iconeTexteTemp = ""
   let iconeTexteConditions = ""
   
-
-
     if(temperature < 0){
-      iconeTexteTemp = "🧥, Manteau d'hiver indispensable"
+      iconeTexteTemp = { icone: "🧥", texte: "Manteau d'hiver indispensable" }
   }
     else if(temperature < 10){
-      iconeTexteTemp = "🧥, Prends un manteau"
+      iconeTexteTemp = { icone: "🧥", texte: "Prends un manteau" }
   }
   else if(temperature < 20){
-    iconeTexteTemp = "🧣, Une veste suffira"
+    iconeTexteTemp = { icone: "🧣", texte: "Une veste suffira" }
   }
   else if(temperature >= 30){
-    iconeTexteTemp = "👕, Habits légers recommandés"
+    iconeTexteTemp = { icone: "👕", texte: "Habits légers recommandés" }
   }
-  if (conditions = )
   
+  if (conditions === "pluvieux"){
+    iconeTexteConditions = { icone: "☂️", texte: "N'oublie pas ton parapluie" }
+  }
+  if (conditions === "orageux"){
+    iconeTexteConditions = { icone: "⚠️", texte: "Évite les zones exposées" }
+  }
+  if (conditions === "neige"){
+    iconeTexteConditions = { icone: "👢", texte: "Préfère des bottes imperméables" }
+  }
+  if (conditions === "ensoleillé" && temperature > 20){
+    iconeTexteConditions = { icone: "🕶️", texte: "Pense à la crème solaire" }
+  }
+  return [iconeTexteTemp, iconeTexteConditions]
   // Écris ton code ici — retourne un tableau []
 }
 
