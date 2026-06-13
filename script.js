@@ -38,8 +38,41 @@ const divRecommandations = document.getElementById("recommandations")
 //   autre valeur                      → "🌡️"
 
 const choisirEmoji = (conditions, temperature) => {
-  // Écris ton code ici
+
+  if(conditions === "ensoleille" && temperature > 25){
+    return("🌞")
+  }
+  else if (conditions === "ensoleille" && temperature < 25){
+    return("☀️")
+
+  }
+  else if (conditions === "nuageux"){
+    return("⛅")
+
+  }
+  else if (conditions === "pluvieux"){
+    return("🌧️")
+
+  }
+  else if (conditions === "orageux"){
+    return("⛈️")
+  
+  }
+  else if (conditions === "neige"){
+    return("❄️")
+
+  }
+  else if (conditions === "brouillard"){
+    return("🌫️")
+
+  }
+  else {
+    return("🌡️")
+  }
 }
+
+
+  // Écris ton code ici
 
 
 // ── TODO : decrireMeteo ──────────────────────
@@ -57,6 +90,41 @@ const choisirEmoji = (conditions, temperature) => {
 // Exemple : decrireMeteo("pluvieux", 8) → "Temps froid et pluvieux"
 
 const decrireMeteo = (conditions, temperature) => {
+  let descritpionmeteo = ""
+  if(temperature < 0){
+    descritpionmeteo = "Temps glacial"
+  }
+  if(temperature < 10){
+    descritpionmeteo = "Temps froid"
+  }
+  if(temperature < 20){
+    descritpionmeteo = "Temps frais"
+  }
+  if(temperature < 30){
+    descritpionmeteo = "Temps agréable"
+  }
+  if(conditions = "enneigé"){
+    descritpionmeteo = `${temperature} et enneigé`
+  }
+  if(conditions = "pluvieux"){
+    descritpionmeteo = `${temperature} et pluvieux`
+  } 
+  if(conditions = "brumeux"){
+    descritpionmeteo = `${temperature} et brumeux`
+  } 
+  if(conditions = "ensoleillé"){
+    descritpionmeteo = `${temperature} et ensoleillé`
+  }
+  if(conditions = "ensoleillé"){
+    descritpionmeteo = `${temperature} et ensoleillé`
+  }  
+  if(conditions = "orageux"){
+    descritpionmeteo = `${temperature} et orageux`
+  } 
+  else{
+    descritpionmeteo = "Temps chaud"
+  }
+  return descritpionmeteo
   // Écris ton code ici
 }
 
