@@ -188,6 +188,9 @@ const recommanderTenue = (conditions, temperature) => {
   return [iconeTexteTemp, iconeTexteConditions]
   // Écris ton code ici — retourne un tableau []
 }
+ // 1.Les conditions météos peuvent ne remplir aucune des conditions, il peut aussi faire nuageux et aucune recommendation pour ce temps n'a été défini
+ // 2. La recommendation icone: "🕶️", texte: "Pense à la crème solaire" appraitra car elle rempli les 2 conditions 
+ // mais pas celle de la température car aucune condition ne couvre le cas d'une température entre 20° et 30°. 
 
 
 // ── Affichage du résultat ────────────────────
